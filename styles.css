@@ -1,0 +1,149 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab); /* Dark gradient background */
+    color: #f8f8f2; /* Light text color */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.3s;
+}
+
+.container {
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #2e2b3a, #1c1a28); /* Gradient container background */
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Darker and stronger shadow */
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+h1 {
+    color: #ff79c6; /* Vibrant color for heading */
+    margin-bottom: 25px;
+    font-size: 36px;
+}
+
+#mode-selector {
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #3a3a52, #29293a); /* Gradient select background */
+    color: #ff79c6; /* Matching color for text */
+    outline: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+select:hover,
+select:focus {
+    background: linear-gradient(145deg, #505073, #373750); /* Slightly brighter on hover/focus */
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 15px;
+    margin: 40px 0;
+}
+
+.cell {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    background: linear-gradient(145deg, #3a3a52, #29293a); /* Gradient background for cells */
+    border: 3px solid #ff79c6; /* Matching border color */
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s, border-color 0.3s;
+}
+
+.cell.winner {
+    background: linear-gradient(145deg, #50fa7b, #3d7a50); /* Gradient for winner cells */
+    border-color: #50fa7b;
+}
+
+.cell:hover {
+    background: linear-gradient(145deg, #505073, #373750); /* Slightly brighter on hover */
+}
+
+#info {
+    margin-top: 30px;
+}
+
+#turn, #status {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #8be9fd; /* Another vibrant color for text */
+}
+
+#score {
+    font-size: 22px;
+    color: #f8f8f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.player-score {
+    margin: 0 15px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #2e2b3a, #1c1a28); /* Matching gradient for modal */
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#play-again {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #ff79c6;
+    color: #f8f8f2;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+#play-again:hover {
+    background-color: #ff92d3; /* Brighter hover color */
+}
+
+@media (max-width: 600px) {
+    .board {
+        grid-template-columns: repeat(3, 100px);
+    }
+
+    .cell {
+        width: 100px;
+        height: 100px;
+        font-size: 24px;
+    }
+}
